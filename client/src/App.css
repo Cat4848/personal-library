@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +40,110 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.nav-bar ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar ul {
+  list-style: none;
+}
+
+.nav-bar li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.nav-bar li a:hover {
+  border-bottom: 1px solid black;
+}
+
+.active {
+  border-bottom: 1px solid black;
+}
+
+.author-row {
+  border-bottom: 1px solid black;
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.author-row-content {
+  margin: 0 5px;
+}
+.success-container {
+  color: rgb(8, 163, 8);
+}
+
+.error-container {
+  color: red;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border-bottom: 1px solid rgb(179, 179, 179);
+  padding: 10px 10px;
+}
+
+.btn {
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 7px;
+  margin: 0;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+
+.btn:hover {
+  box-shadow: none;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+}
+
+.book-radio-input {
+  display: none;
+}
+
+.checked-btn {
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.start-btn {
+  background-color: skyblue;
+}
+
+.stop-btn {
+  background-color: greenyellow;
+}
+
+.edit-save-btn {
+  background-color: rgb(244, 200, 89);
+}
+
+.add-btn{
+  background-color: #000000;
+  color: white;
+}
+
