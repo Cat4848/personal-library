@@ -7,8 +7,7 @@ const cors = require("cors");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-console.log(process.env.DATABASE_URL);
-console.log(app.get("env"))
+
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
