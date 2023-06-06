@@ -1,9 +1,9 @@
-import { Button } from "../common/Button";
+import Button from "../common/Button/Button";
 import { useState, useEffect } from "react";
 import { useForm, useController } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
-import { Input } from "../common/Input";
+import Input from "../common/Input/Input";
 import { Message } from "../common/Message";
 
 export function NewBookForm() {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Author } from "./Author";
+import { Author } from "./Author/Author";
 import { Message } from "../common/Message";
 import { SearchBar } from "../common/SearchBar";
 

@@ -3,7 +3,7 @@ import Select from "react-select";
 import { useController, useForm } from "react-hook-form";
 import { RadioButton } from "./RadioButton";
 import { updateUtility } from "../../utils/updateUtility";
-import { Button } from "../common/Button";
+import Button from "../common/Button/Button";
 
 export function Book({ index, book, onChange, onDelete, authorsOptions }) {
   const [isEditing, setIsEditing] = useState(false);

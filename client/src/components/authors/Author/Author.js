@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button } from "../common/Button";
-import { updateUtility } from "../../utils/updateUtility";
+import Button from "../../common/Button/Button";
+import { updateUtility } from "../../../utils/updateUtility";
 
 export function Author({ author, onUpdate, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);

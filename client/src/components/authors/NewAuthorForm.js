@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Input } from "../common/Input";
+import Input from "../common/Input/Input";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Message } from "../common/Message";
-import { Button } from "../common/Button";
+import Button from "../common/Button/Button";
 
 export function NewAuthorForm() {
   const [author, setAuthor] = useState("");

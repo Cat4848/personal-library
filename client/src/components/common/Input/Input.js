@@ -1,4 +1,4 @@
-export function Input({
+export default function Input({
   validation: {
     name, label, id, placeholder, inputType, validation
   }, register, errors, onInputChange
