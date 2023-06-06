@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Book } from "./Book";
-import { SearchForm } from "./SearchForm";
-import { useForm } from "react-hook-form";
 import { Filter } from "./Filter";
+import { SearchBar } from "../common/SearchBar";
 
 const filterMap = {
   all: () => true,
@@ -22,14 +21,9 @@ const filterMap = {
 export function Books() {
   const [books, setBooks] = useState([]);
   const [authors, setAuthors] = useState([]);
-  const [search, setSearch] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [filter, setFilter] = useState("all");
   let url = "http://localhost:4000/books/";
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  } = useForm();
 
   useEffect(() => {
     (async () => {
@@ -39,24 +33,20 @@ export function Books() {
     })();
   }, []);
 
-  if (search !== "") {
-    url = url + `?title=${search}`;
+  if (searchInput !== "") {
+    url = url + `?title=${searchInput}`;
   }
-  
+
   useEffect(() => {
     fetch(url)
-    .then((response) => response.json())
-    .then((books) => setBooks(books.books));
+      .then((response) => response.json())
+      .then((books) => setBooks(books.books));
   }, [url]);
-  
+
   const authorsOptions = authors.reduce((acc, curr, i) => {
     acc[i] = { value: curr._id, label: curr.name };
     return acc;
   }, []);
-  
-  function onSearch(data) {
-    console.log("handle submit -> data", data);
-  }
 
   function updateDatabase(changedBook) {
     fetch(`http://localhost:4000/books/${changedBook._id}`, {
@@ -68,8 +58,7 @@ export function Books() {
     });
   }
 
-  function onChange(changedBook) {
-    console.log("onChange book -> changed book", changedBook);
+  function handleChange(changedBook) {
     setBooks(
       books.map((book) => {
         if (book._id === changedBook._id) {
@@ -82,30 +71,25 @@ export function Books() {
     );
   }
 
-  function handleDeleteBook(bookId) {
-    console.log("onDelete function -> book id", bookId);
+  function handleDelete(bookId) {
     setBooks(books.filter((book) => book._id !== bookId));
 
     fetch(`http://localhost:4000/books/${bookId}`, { method: "DELETE" });
   }
 
   function handleFilterBooks(filterType) {
-    console.log("handle filter books -> type", filterType);
     setFilter(filterType);
   }
 
   return (
     <>
       <h1>Books</h1>
-      <SearchForm
-        searchType={"books"}
-        onSearch={onSearch}
-        onChange={setSearch}
-        register={register}
-        errors={errors}
-        handleSubmit={handleSubmit}
+      <SearchBar
+        name={"Books"}
+        input={searchInput}
+        onInputChange={setSearchInput}
       />
-      <Filter onFilter={handleFilterBooks} />
+      <Filter onFilterBooks={handleFilterBooks} />
       <table>
         <colgroup span={12}></colgroup>
         <thead>
@@ -130,8 +114,8 @@ export function Books() {
               key={book._id}
               index={i + 1}
               book={book}
-              onChange={onChange}
-              onDelete={handleDeleteBook}
+              onChange={handleChange}
+              onDelete={handleDelete}
               authorsOptions={authorsOptions}
             />
           ))}

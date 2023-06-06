@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const newBook = new Book ({
     author: req.body.author,
-    title: req.body.bookTitles,
+    title: req.body.bookTitle,
     read: req.body.read,
     inProgress: req.body.inProgress,
     publisher: req.body.bookPublisher,

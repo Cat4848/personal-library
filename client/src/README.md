@@ -1,39 +1,10 @@
-This is a Personal Library project where you can add, edit and delete authors and books.
-The App stores the authors and the books in MongoDB.
+# Getting Started with Create React App
 
-Features:
-
-1. Interactive Search Bar – performs the search as you type and the search results are updated on every key stroke.
-
-2. Books Filter Bar - filters the book in a useful way by:
-   • books read;
-   • books not read;
-   • books on reading in progress;
-   • books read in the current year;
-   • books read in the previous year.
-
-3. Interactive Edit-Save fields for authors and books – the App makes full use of the React State, which helps in creating interactive and compact UI by avoiding the need of navigating the user to another page when editing an author or a book is necessary. Instead, the Edit and Save features are rendered by toggling the editing state from false to true. When the state changes, the UI changes accordingly. This React feature enables the user to edit, save and view authors and books.
-
-4. Start or Stop reading a book - by pressing the Start button, the user lets the App know that this is the book they started reading. That book will display as being in progress and the system adds the current date and time to the database. After the book in read, if the Stop button is pressed, the book will be displayed as read and the current date and time added to the database. The dates are used when filtering the books by "read in the current year" and "read in the previous year".
-
-Styling Note - this project's style sheets are minimal but pleasant because the styles are not the main focus of this project.
-
-## Server Side
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project "server" directory, you can run:
-
-### `npm run start`
-
-Starts the server that manages the MongoDB.
-The server will listed on [http://localhost:4000]
-
-## Client Side
-
-## Available Scripts
-
-In the project "client" directory, you can run:
+In the project directory, you can run:
 
 ### `npm start`
 

@@ -1,7 +1,7 @@
 import Select from "react-select";
 import { useController, useForm } from "react-hook-form";
 
-export function Filter({ onFilter }) {
+export function Filter({ onFilterBooks }) {
   const { control } = useForm();
 
   const {
@@ -18,7 +18,7 @@ export function Filter({ onFilter }) {
 
   return (
     <>
-      <label>Filter By</label>
+      <h4>Filter By</h4>
       <Select
         autoFocus={true}
         placeholder="Filter by"
@@ -31,7 +31,7 @@ export function Filter({ onFilter }) {
         }
         onChange={(option) => {
           selectOnChange(option ? option.value : option);
-          onFilter(option.value);
+          onFilterBooks(option.value);
         }}
         {...restSelectField}
         />

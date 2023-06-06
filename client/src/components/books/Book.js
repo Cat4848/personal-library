@@ -2,10 +2,8 @@ import { useState } from "react";
 import Select from "react-select";
 import { useController, useForm } from "react-hook-form";
 import { RadioButton } from "./RadioButton";
-import { DeleteButton } from "./DeleteButton";
-import { EditButton } from "./EditButton";
-import { SaveButton } from "./SaveButton";
-import { updateUtility } from "./updateUtility";
+import { updateUtility } from "../../utils/updateUtility";
+import { Button } from "../common/Button";
 
 export function Book({ index, book, onChange, onDelete, authorsOptions }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -76,10 +74,20 @@ function NotEditing({
       <td>{book.edition}</td>
       <td>{book.notes}</td>
       <td>
-        <EditButton isEditing={isEditing} setIsEditing={setIsEditing} />
+        <Button
+          buttonType={"button"}
+          name={"Edit"}
+          buttonClass={"edit-save-btn"}
+          onClick={() => setIsEditing(!isEditing)}
+        />
       </td>
       <td>
-        <DeleteButton onDelete={onDelete} id={book._id} />
+        <Button
+          buttonType={"button"}
+          name={"Delete"}
+          buttonClass={"delete-btn"}
+          onClick={() => onDelete(book._id)}
+        />
       </td>
       <td>
         <RadioButton
@@ -147,11 +155,7 @@ function Editing({
         />
       </td>
       <td>
-        <input
-          type="checkbox"
-          checked={book.inProgress}
-          readOnly={true}
-        />
+        <input type="checkbox" checked={book.inProgress} readOnly={true} />
       </td>
       <td>
         <input
@@ -221,17 +225,27 @@ function Editing({
         />
       </td>
       <td>
-        <SaveButton
-          updateStateAndDatabase={() => updateUtility({
-            url: booksUrl,
-            item: book,
-            isEditing: isEditing,
-            setIsEditing: setIsEditing
-          })}
+        <Button
+          buttonType={"button"}
+          name={"Save"}
+          buttonClass={"edit-save-btn"}
+          onClick={() =>
+            updateUtility({
+              url: booksUrl,
+              item: book,
+              isEditing: isEditing,
+              setIsEditing: setIsEditing
+            })
+          }
         />
       </td>
       <td>
-        <DeleteButton onDelete={onDelete} id={book._id} />
+        <Button
+          buttonType={"button"}
+          name={"Delete"}
+          buttonClass={"delete-btn"}
+          onClick={() => onDelete(book._id)}
+        />
       </td>
     </tr>
   );
