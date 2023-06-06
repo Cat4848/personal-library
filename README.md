@@ -3,7 +3,7 @@ The App stores the authors and the books in MongoDB.
 
 Features:
 
-1. Interactive Search Bar – performs the search as you type and the search results are updated on every key stroke.
+1. Interactive Search Bar – performs the search as you type and the search results are updated on every keystroke.
 
 2. Books Filter Bar - filters the book in a useful way by:
    • books read;
@@ -18,7 +18,7 @@ Features:
 
 Styling Note - this project's style sheets are minimal but pleasant because the styles are not the main focus of this project.
 
-## Server Side
+# Server Side
 
 ## Available Scripts
 
@@ -27,9 +27,9 @@ In the project "server" directory, you can run:
 ### `npm run start`
 
 Starts the server that manages the MongoDB.
-The server will listed on [http://localhost:4000]
+The server will listed on [http://localhost:4000/](http://localhost:4000/)
 
-## Client Side
+# Client Side
 
 ## Available Scripts
 
