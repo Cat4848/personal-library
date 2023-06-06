@@ -22,7 +22,7 @@ Styling Note - this project's style sheets are minimal but pleasant because the 
 
 ## Available Scripts
 
-In the project "server" directory, you can run:
+In the "server" directory, you can run:
 
 ### `npm run start`
 
@@ -33,7 +33,7 @@ The server will listed on [http://localhost:4000/](http://localhost:4000/)
 
 ## Available Scripts
 
-In the project "client" directory, you can run:
+In the "client" directory, you can run:
 
 ### `npm start`
 
