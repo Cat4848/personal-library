@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Author } from "./Author/Author";
-import { Message } from "../common/Message";
-import { SearchBar } from "../common/SearchBar";
+import Message from "../common/Message/Message";
+import SearchBar from "../common/SearchBar/SearchBar";
 
-export function Authors() {
+export default function Authors() {
   const [authors, setAuthors] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [isError, setIsError] = useState(false);

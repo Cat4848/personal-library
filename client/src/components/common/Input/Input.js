@@ -14,7 +14,7 @@ export default function Input({
           onChange={e => onInputChange(e.target.value)}
           />
       </label>
-      <p>{errors[name]?.message}</p>
+      <h6 data-testid="h6">{ errors[name]?.message}</h6>
     </div>
   );
 }

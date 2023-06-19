@@ -1,7 +1,7 @@
 import { FaThumbsUp } from "react-icons/fa";
 import { FaThumbsDown } from "react-icons/fa";
 
-export function Message({ success, error }) {
+export default function Message({ success, error }) {
   const successTemplate = (
     <div className="success-container">
       <FaThumbsUp /> {success}
@@ -15,9 +15,9 @@ export function Message({ success, error }) {
   );
 
   return (
-    <>
+    <h6>
       {success && successTemplate}
       {error && errorTemplate}
-    </>
+    </h6>
   )
 }

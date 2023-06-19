@@ -4,9 +4,9 @@ import Home from "./components/Home/Home";
 import { NewBookForm } from "./components/books/NewBookForm";
 import { Books } from "./components/books/Books";
 import NotFound from "./components/NotFound/NotFound";
-import { Authors } from "./components/authors/Authors";
-import { NewAuthorForm } from "./components/authors/NewAuthorForm";
-import { NavBar } from "./components/common/NavBar";
+import Authors from "./components/authors/Authors";
+import NewAuthorForm from "./components/authors/Author/NewAuthorForm/NewAuthorForm";
+import NavBar from "./components/common/NavBar/NavBar";
 
 function App() {
   return (

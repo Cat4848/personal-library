@@ -11,5 +11,5 @@ export function RadioButton({ label, value, onChange }) {
       />
       {label}
     </label>
-  )
+  );
 }

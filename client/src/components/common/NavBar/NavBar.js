@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-export function NavBar() {
+export default function NavBar() {
   const location = useLocation();
   return (
     <div className="nav-bar">

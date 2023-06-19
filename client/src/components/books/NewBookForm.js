@@ -4,7 +4,7 @@ import { useForm, useController } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import Input from "../common/Input/Input";
-import { Message } from "../common/Message";
+import Message from "../common/Message/Message";
 
 export function NewBookForm() {
   const [authors, setAuthors] = useState([]);

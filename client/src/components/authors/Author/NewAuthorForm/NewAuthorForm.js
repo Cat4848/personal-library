@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Input from "../common/Input/Input";
+import Input from "../../../common/Input/Input";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { Message } from "../common/Message";
-import Button from "../common/Button/Button";
+import Message from "../../../common/Message/Message";
+import Button from "../../../common/Button/Button";
 
-export function NewAuthorForm() {
+export default function NewAuthorForm() {
   const [author, setAuthor] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");

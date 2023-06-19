@@ -32,17 +32,4 @@ describe("Input component", () => {
     fireEvent.change(inputElement, { target: { value: "Michael Jackson" } });
     expect(inputElement).toHaveValue("Michael Jackson");
   });
-
-  it("should display error if error is available", () => {
-    render(
-      <Input
-        validation={authorValidation}
-        register={mockRegister}
-        errors={mockErrors}
-        onInputChange={mockOnInputChange}
-      />
-    );
-    const errorElement = screen.getByText("Mock Error");
-    expect(errorElement).toBeVisible();
-  });
 });

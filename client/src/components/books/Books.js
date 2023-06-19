@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Book } from "./Book";
 import { Filter } from "./Filter";
-import { SearchBar } from "../common/SearchBar";
+import SearchBar from "../common/SearchBar/SearchBar";
 
 const filterMap = {
   all: () => true,
